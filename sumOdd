@@ -1,0 +1,33 @@
+public class OddNumberSum {
+
+    // Method to check if a number is odd
+    public static boolean isOdd(int number) {
+        // Check if the number is greater than 0
+        if (number <= 0) {
+            return false;
+        }
+
+        // Check if the number is odd using the remainder operator
+        return number % 2 != 0;
+    }
+
+    // Method to sum all odd numbers in a specified range
+    public static int sumOdd(int start, int end) {
+        // Check for invalid input
+        if (start <= 0 || end <= 0 || end < start) {
+            return -1;
+        }
+
+        int sum = 0;
+
+        // Loop through all numbers in the range from start to end (inclusive)
+        for (int i = start; i <= end; i++) {
+            // If the current number is odd, add it to the sum
+            if (isOdd(i)) {
+                sum += i;
+            }
+        }
+
+        return sum;
+    }
+}
