@@ -1,0 +1,20 @@
+public static boolean hasSharedDigit(int num1, int num2) {
+    // Check if both numbers are within the valid range (10 to 99 inclusive)
+    if (num1 < 10 || num1 > 99 || num2 < 10 || num2 > 99) {
+        return false;
+    }
+
+    // Extract the digits of both numbers
+    int num1Tens = num1 / 10;
+    int num1Ones = num1 % 10;
+    int num2Tens = num2 / 10;
+    int num2Ones = num2 % 10;
+
+    // Compare the digits to check if there's any match
+    if (num1Tens == num2Tens || num1Tens == num2Ones || num1Ones == num2Tens || num1Ones == num2Ones) {
+        return true;
+    }
+
+    // Return false if no digits match
+    return false;
+}
