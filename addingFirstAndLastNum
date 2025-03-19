@@ -1,0 +1,18 @@
+public static int sumFirstAndLastDigit(int number) {
+    // If the number is negative, return -1
+    if (number < 0) {
+        return -1;
+    }
+
+    // Find the last digit (using modulus operation)
+    int lastDigit = number % 10;
+
+    // Find the first digit (divide the number by 10 until it becomes a single-digit number)
+    while (number >= 10) {
+        number = number / 10;
+    }
+    int firstDigit = number;
+
+    // Return the sum of the first and last digit
+    return firstDigit + lastDigit;
+}
